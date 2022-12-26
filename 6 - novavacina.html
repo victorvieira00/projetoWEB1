@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <meta charset="UTF-8">
+        <title>Nova Vacina</title>
+        <link rel="icon" href="seringa-1.png">
+        <link rel="stylesheet" href="6 - novavacina.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
+
+        <script type="module">
+
+            import {db} from './config/config.js'
+            import { addDoc, collection, getDoc, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+
+
+            const datavacina = () =>{
+                let data = document.getElementById("txtdata").value
+                let dataformatada = data.split('-').reverse().join('/') 
+                return dataformatada
+            }
+
+            const nomevacina = () =>{
+                return document.getElementById("txtnome").value
+            }
+
+            const dosevacina = () =>{
+             document.getElementById("radios").value
+                if (document.getElementById('dose1').checked) {
+                    return "1 dose";
+                }
+                if (document.getElementById('dose2').checked) {
+                    return "2 dose";
+                }
+                if (document.getElementById('dose3').checked) {
+                    return "3 dose";
+                }
+                if (document.getElementById('dose4').checked) {
+                    return "Reforço";
+                }
+                if (document.getElementById('dose5').checked) {
+                    return "Dose única";
+                }
+            }
+
+            /*const imagemvacina = () =>{
+                return document.getElementById()
+            }*/
+
+            const novadatavacina = () =>{
+                let proximadose = document.getElementById('txtnovadata').value
+                let proximadoseformatada = proximadose.split('-').reverse().join('/')
+                if(proximadose < 1){
+                    return "Não haverá próxima dose"
+                }else{
+                    return proximadoseformatada
+                }
+            }
+
+            const setdata = (data) =>{
+                document.getElementById("txtdata").value = data
+            }
+
+            const setnome = (nome) =>{
+                document.getElementById("txtnome").value = nome
+            }
+
+            const setdose = (dose) =>{
+                document.getElementById("radios").value = dose
+            }
+
+            const setnovadata = (novadata) =>{
+                document.getElementById("txtnovadata").value = novadata
+            }
+
+            const salvarvacina = () =>{
+                addDoc( collection(db, "vacinas"), {
+                    data: datavacina(),
+                    nome: nomevacina(),
+                    dose: dosevacina(),
+                    novadata: novadatavacina()
+                })
+                .then((result) => {
+                    console.log(JSON.stringify(result))
+                    window.location.href = "4 - home.html"
+                })
+                .catch((error) => {
+                    console.log("Erro ao persistir dados:" + error)
+                })
+            }
+
+            window.onload = () => {
+                var home = document.getElementById("acessarhome") //captura o elemento
+
+                home.addEventListener("click", clickHome) // captura o click e manda para a outra função
+
+                function clickHome() { // executa a função da melhor forma
+                   window.location.href = "4 - home.html" // Acessa a tela 4 - home
+                }
+
+                var vacinas = document.getElementById("minhasvacinas")
+
+                vacinas.addEventListener("click", consultarvacinas)
+
+                function consultarvacinas() {
+                    window.location.href = "4 - home.html" // Acessa a tela 4 - home
+                }
+
+                document.getElementById("salvarvacina").addEventListener('click', salvarvacina)
+
+            }
+        </script>
+    </head>
+    <body>
+        <header class="header">
+                <div class="logo">
+                <img  src="seringa-1.png"/>
+                <span class="texto-logo" id="acessarhome">MyHealth</span>
+                </div>
+                <div class="header-button">
+                    <button class="button1" id="minhasvacinas">Minhas Vacinas</button></li>
+                    <button class="button1" id="logout">Logout</button></li>
+                </div>
+        </header>
+
+            <main class="main"> 
+
+                <div class="formulario">
+                    <div class="data">
+                        <label class="text-form">Data de vacinação</label> 
+                        <input type="date" class="text-input-date" id="txtdata">
+                    </div>
+                    <div class="vacina">
+                        <label class="text-form">Vacina</label> 
+                        <input type="text" class="text-input" id="txtnome">
+                    </div>
+                    <div class="dose">
+                        <label class="text-form">Dose</label>
+                        <div class="dose-radio" id="radios">
+                        <input type="radio" class="radio1" name="opcao" value="1" id="dose1"> <span class="n-dose">1a dose</span> 
+                        <input type="radio" class="radio1" name="opcao" value="2" id="dose2"> <span class="n-dose">2a dose</span>
+                        <input type="radio" class="radio1" name="opcao" value="3" id="dose3"> <span class="n-dose">3a dose</span>
+                        <input type="radio" class="radio1" name="opcao" value="4" id="dose4"> <span class="n-dose">Reforço</span>
+                        <input type="radio" class="radio1" name="opcao" value="5" id="dose5"> <span class="n-dose">Dose Única</span>
+                    </div>
+                    </div>
+                     <div class="imagem-vacina">
+                        <label class="text-form">Comprovante da vacina</label>
+                        <button class="button3">Selecionar imagem</button>
+                    </div>   
+                    <div class="foto">
+                        <label class="text-form"></label>
+                        <img src="vacina[.PNG">
+                    </div>    
+                    <div class="prox-vacina">
+                        <label class="text-form">Próxima vacinação</label>
+                        <input type="date" class="text-input-date" id="txtnovadata">
+                    </div>
+                </div>
+                <button class="button4" id="salvarvacina">Cadastrar</button>
+            </main>
+    </body>
+</html>

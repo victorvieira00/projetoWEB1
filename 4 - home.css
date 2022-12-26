@@ -1,0 +1,169 @@
+* {
+    margin: 0px;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 87px;
+    align-items: center;
+    background-color: #C1E7E3;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    width: 51px;
+    height: 51px;
+    margin-left: 18px;
+}
+
+.texto-logo {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    margin-left: 16px;
+    font-family: 'Averia Libre';
+    font-style: normal;
+    font-size: 48px;
+    color: #419ED7;
+    align-items: flex-start;
+}
+
+.header-button{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.button1 {
+    font-family: 'Averia Libre', cursive;
+    width: 188px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #419ED7;
+    border: 1px solid #419ED7;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+
+.button1:hover {
+    background-color: #419dd7c5;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ADD5D0;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #ADD5D0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pesquisa {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; 
+    width: 90%;   
+}
+
+.text-input {
+    font-family: 'Averia Libre', cursive;
+    color: #419ED7;
+    width: 150vh;
+    height: auto;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+}
+
+.container-vacinas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+    width: 70%;
+}
+
+.vacinas-item {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.titulo {
+    font-family: 'Averia Libre', cursive;
+    margin-top: 10px;
+    font-size: 36px;
+    color: #3F92C5;
+}
+
+.dose {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    font-size: 16px;
+    background-color: #3F92C5;
+    width: 93.88px;
+    height: 19.98px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.data {
+    font-family: 'Averia Libre', cursive;
+    color: #8B8B8B;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.foto {
+    margin-top: 10px;
+}
+
+.proximadose {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #FD7979;
+    width: 305px;
+    height: 18px;   
+    justify-content: right;    
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.button2 {
+    font-family: 'Averia Libre', cursive;
+    width: 188px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #49B976;
+    border: 1px solid #37BD6D;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+}
+
+.button2:hover {
+    background-color: #49b976b0;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

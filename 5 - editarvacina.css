@@ -1,0 +1,301 @@
+* {
+    margin: 0px;
+}
+
+.header {
+    display: flex;
+    width: auto;
+    height: 87px;
+    align-items: center;
+    background-color: #C1E7E3;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    width: 51px;
+    height: 51px;
+}
+
+.texto-logo {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    margin-left: 16px;
+    font-family: 'Averia Libre';
+    font-style: normal;
+    font-size: 48px;
+    color: #419ED7;
+    align-items: flex-start;
+}
+
+.header-button{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.button1 {
+    font-family: 'Averia Libre', cursive;
+    width: 188px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #419ED7;
+    border: 1px solid #419ED7;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.button1:hover {
+    background-color: #419dd7c5;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body {
+
+    height: 100%;
+    width: 100%;
+    background-color: #ADD5D0;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #ADD5D0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-excluir{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.popup-completo{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.popup-completo.visivel{
+    display: flex;
+}
+
+.pop-up{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 698px;
+    height: 317px;
+    background-color:white;
+    justify-content: center;
+    text-align: center;
+    margin: 15% auto;
+    border-radius: 10px;
+}
+
+.text-pop{
+    font-family: 'Averia Libre', cursive;
+    margin-top: 20px;
+    color:#FD7979;
+    font-size: 30px;
+}
+
+.button-pop{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.button-item-yes{
+    font-family: 'Averia Libre', cursive;
+    width: 188px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #FF8383;
+    border: 1px solid #FF8383;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.button-item-yes:hover {
+    background-color: #FF8383;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button-item-cancel{
+    font-family: 'Averia Libre', cursive;
+    width: 188px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #3F92C5;
+    border: 1px solid #3F92C5;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.button-item-cancel:hover {
+    background-color: #3F92C5;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    font-family: 'Averia Libre', cursive;
+    width: 133px;
+    height: 44px;
+    font-size: 20px;
+    color: white;
+    background-color: #FD7979;
+    border: 1px solid #FD7979;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+.button2:hover {
+    background-color: #fd7979bb;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.formulario {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vacina{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dose{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.imagem-vacina{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.prox-vacina{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.text-input {
+    font-family: 'Averia Libre', cursive;
+    color: #419ED7;
+    width: 600px;
+    height: auto;
+    font-size: 20px;
+}
+
+.foto{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+label {
+    font-family: 'Averia Libre', cursive;
+    display: flex;
+    width: 300px;
+    justify-content: flex-end;
+    margin-right: 10px;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+.n-dose {
+    font-family: 'Averia Libre', cursive;
+    font-size: 20px;
+    color: white;
+    width: auto;
+}
+
+.dose-radio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-input-date {
+    font-family: 'Averia Libre', cursive;
+    width: 299px;
+    height:auto;
+    color: #419ED7;
+    font-size: 20px;
+}
+
+.radio1{
+    font-family: 'Averia Libre', cursive;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 35px;
+    right: 35px;
+    font-size: 20px;
+}
+
+.button3 {
+    font-family: 'Averia Libre', cursive;
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    color: white;
+    background-color: #49B976;
+    border: 1px solid #37BD6D;
+    cursor: pointer;
+
+}
+
+.button3:hover {
+    background-color: #49b9769d;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button4 {
+    font-family: 'Averia Libre', cursive;
+    width: 213px;
+    height: 48px;
+    font-size: 24px;
+    color: white;
+    background-color: #49B976;
+    border: 1px solid #37BD6D;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 8%;
+
+}
+
+.button4:hover {
+    background-color: #49b9769d;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

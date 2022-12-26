@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Entrar</title>
+        <link rel="icon" href="seringa-1.png">
+        <link rel="stylesheet" href="7 - recuperarsenha.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
+
+        <script type="module">
+
+        import {app, auth} from './config/config.js'
+        import {sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"
+
+        const getemail = () =>{
+            return document.getElementById("txt-email").value
+        }
+
+        const novasenha = () =>{
+            const email = getemail()
+
+            sendPasswordResetEmail(auth, email)
+            .then( () =>{
+                console.log(JSON.stringify(email))
+                alert('Solicitação Realizada')
+                window.location.href = "1 - index.html"
+            })
+            .catch(() =>{
+                alert('Erro ao solicitar')
+            })
+        }
+
+        window.onload = () => {
+            var index = document.getElementById("acessarindex") //captura o elemento
+
+            index.addEventListener("click", clickindex) // captura o click e manda para a outra função
+
+            function clickindex() { // executa a função da melhor forma
+               window.location.href = "1 - index.html" // Acessa a tela 1 - index
+            }
+
+            document.getElementById("redefinirsenha").addEventListener('click', novasenha)
+        }
+        </script>
+    </head>
+
+    <body class="body"> 
+        <header class="header">
+            <div class="logo">
+            <img  src="seringa-1.png"/>
+            <span class="texto-logo" id="acessarindex">MyHealth</span>
+            </div>
+        </header>
+        <main class="main">
+                <div class="formulario">
+                    <label>E-mail</label>
+                    <input type="text" class="text-input" id="txt-email">
+                </div>
+               <button class="button1" id="redefinirsenha">Redefinir senha</button>
+        </main>
+    </body>
+</html>

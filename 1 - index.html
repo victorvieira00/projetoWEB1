@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="seringa-1.png">
+        <link rel="stylesheet" href="1 - index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
+
+        <script>
+            window.onload = () => {
+                var entrar = document.getElementById("jatenhoconta") //captura o elemento
+
+                entrar.addEventListener("click", jatenhoconta) // captura o click e manda para a outra função
+
+                function jatenhoconta() { // executa a função da melhor forma
+                   window.location.href = "3 - entrar.html" // Acessa a tela 3 - Entrar
+                }
+
+                var novaconta = document.getElementById("criarconta") //captura o elemento
+
+                novaconta.addEventListener("click", criarconta) // captura o click e manda para a outra função
+
+                function criarconta() { // executa a função da melhor forma
+                   window.location.href = "2 - criarconta.html" // Acessa a tela 2 - criarconta
+                }
+            }
+        </script>
+    </head>
+
+    <body>     
+            <header class="header">
+                <div class="logo">
+                    <img src="seringa-1.png"/>
+                    <span class="texto-logo">MyHealth</span>
+                </div>  
+                 <button class="button1" id="jatenhoconta">Já tenho conta</button>
+            </header>
+        <main class="main">
+            <div class="texto">
+                <p>Controle as suas vacinas e fique seguro</p>
+            </div>
+                <button class="button2" id="criarconta">Criar minha conta</button>
+        </main>
+    </body>
+</html>
